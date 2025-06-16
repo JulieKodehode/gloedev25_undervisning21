@@ -60,9 +60,11 @@ async function displayJson() {
     const displayJson = document.getElementById("displayJson");
 
     fruitBowl.forEach(fruit => {
-        const li = document.createElement("li");
-        li.textContent = fruit.fruit; // Resultatet synes. Mulig nettleser ikke oppdaterte seg
-        displayJson.appendChild(li);
+        if (fruit.fruit) { // For å kun få ut et li-element
+            const li = document.createElement("li");
+            li.textContent = fruit.fruit // Resultatet synes. Mulig nettleser ikke oppdaterte seg
+            displayJson.appendChild(li);
+        }
     });
 };
 
